@@ -5,12 +5,13 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.actuate.autoconfigure.metrics.SystemMetricsAutoConfiguration;
+
 
 @Configuration
-@SpringBootApplication
+@SpringBootApplication(exclude = { SystemMetricsAutoConfiguration.class })
 @EnableAutoConfiguration
 @ComponentScan({"com.example.controller","com.example.service"})
-
 public class Demo1Application {
 
 	public static void main(String[] args) {
